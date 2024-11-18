@@ -26,7 +26,6 @@ fun Application.configureFrameworks() {
             single { monitor }
             singleOf(::SerializationModule) bind KtorModule::class
             singleOf(::DatabaseModule) bind KtorModule::class
-            singleOf(::TemplateModule) bind KtorModule::class
             singleOf(::SecurityModule) bind KtorModule::class
             singleOf(::MongoDatabase)
         })

@@ -29,6 +29,8 @@ kvision-ktor-koin = { module = "io.kvision:kvision-server-ktor-koin", version.re
 kvision-state = { module = "io.kvision:kvision-state", version.ref = "kvision-version" }
 kvision-fontawesome = { module = "io.kvision:kvision-fontawesome", version.ref = "kvision-version" }
 kvision-i18n = { module = "io.kvision:kvision-i18n", version.ref = "kvision-version" }
+ktor-server-test-host = { module = "io.ktor:ktor-server-test-host-jvm", version.ref = "ktor-version" }
+kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin-version" }
 
 [plugins]
 kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version = "2.0.21" }

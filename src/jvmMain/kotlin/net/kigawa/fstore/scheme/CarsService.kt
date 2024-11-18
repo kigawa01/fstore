@@ -25,7 +25,7 @@ class CarService(private val database: MongoDatabase) {
 
     // Read a car
     suspend fun read(id: String): Project? = withContext(Dispatchers.IO) {
-        collection.find(Filters.eq("_id", ObjectId(id))).first()?.let(Project::fromDocument)
+        collection.find(Filters.eq("_id", ObjectId(id))).first()?.let { Scheme.fromDocument<Project>(it) }
     }
 
     // Update a car

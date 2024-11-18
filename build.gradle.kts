@@ -64,16 +64,18 @@ kotlin {
             implementation(libs.mongodb.driver.sync)
             implementation(libs.bson)
             implementation(libs.ktor.server.html.builder)
-//            implementation(libs.kotlinx.html)
-//            implementation(libs.kotlin.css)
             implementation(libs.ktor.server.auth)
             implementation(libs.ktor.server.auth.jwt)
             implementation(libs.ktor.server.netty)
             implementation(libs.logback.classic)
             implementation(libs.ktor.server.config.yaml)
-//            testImplementation(libs.ktor.server.test.host)
-//            testImplementation(libs.kotlin.test.junit)
-//            testImplementation(kotlin("test"))
+        }
+    }
+    sourceSets["jvmTest"].apply {
+        dependencies {
+            implementation(libs.ktor.server.test.host)
+            implementation(libs.kotlin.test.junit)
+            implementation(kotlin("test"))
         }
     }
 

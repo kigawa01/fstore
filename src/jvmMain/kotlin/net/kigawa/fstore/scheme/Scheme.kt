@@ -8,8 +8,8 @@ interface Scheme {
     fun toDocument(): Document = Document.parse(Json.encodeToString(this))
 
     companion object {
-        val json = Json { ignoreUnknownKeys = true }
 
-        inline fun <reified T : Scheme> T.fromDocument(document: Document): T = json.decodeFromString(document.toJson())
+        val json = Json { ignoreUnknownKeys = true }
+        inline fun <reified T : Scheme> fromDocument(document: Document): T = json.decodeFromString(document.toJson())
     }
 }
