@@ -1,11 +1,8 @@
 package net.kigawa.fstore
 
 import io.ktor.server.application.*
-import net.kigawa.fstore.module.DatabaseModule
-import net.kigawa.fstore.module.KtorModule
-import net.kigawa.fstore.module.SecurityModule
-import net.kigawa.fstore.module.SerializationModule
-import net.kigawa.fstore.module.TemplateModule
+import net.kigawa.fstore.module.*
+import net.kigawa.fstore.service.MongoDatabase
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.bind
 import org.koin.dsl.module
@@ -25,10 +22,13 @@ fun Application.configureFrameworks() {
         slf4jLogger()
         modules(module {
             single { this@configureFrameworks }
+            single { environment }
+            single { monitor }
             singleOf(::SerializationModule) bind KtorModule::class
             singleOf(::DatabaseModule) bind KtorModule::class
             singleOf(::TemplateModule) bind KtorModule::class
             singleOf(::SecurityModule) bind KtorModule::class
+            singleOf(::MongoDatabase)
         })
     }
 }
