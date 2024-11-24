@@ -2,7 +2,7 @@ package net.kigawa.fstore
 
 import io.ktor.server.application.*
 import net.kigawa.fstore.module.*
-import net.kigawa.fstore.service.MongoDatabase
+import net.kigawa.fstore.service.Database
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.bind
 import org.koin.dsl.module
@@ -27,7 +27,7 @@ fun Application.configureFrameworks() {
             singleOf(::SerializationModule) bind KtorModule::class
             singleOf(::DatabaseModule) bind KtorModule::class
             singleOf(::SecurityModule) bind KtorModule::class
-            singleOf(::MongoDatabase)
+            singleOf(::Database)
         })
     }
 }
