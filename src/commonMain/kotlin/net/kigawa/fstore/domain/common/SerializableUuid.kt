@@ -1,4 +1,4 @@
-package net.kigawa.fstore.domain
+package net.kigawa.fstore.domain.common
 
 import kotlinx.serialization.Serializable
 import net.kigawa.fstore.serializer.SerializableUuidSerializer

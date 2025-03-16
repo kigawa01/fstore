@@ -52,9 +52,13 @@ kotlin {
     }
     sourceSets["commonMain"].dependencies {
         api(libs.kvision.ktor.koin)
+        implementation(libs.ktor.client.core)
+        implementation(libs.ktor.http)
+        implementation(kotlin("stdlib-common"))
     }
     sourceSets["jvmMain"].apply {
         dependencies {
+            implementation(libs.ktor.client.cio)
             implementation(libs.koin.ktor)
             implementation(libs.koin.logger.slf4j)
             implementation(libs.ktor.server.core)

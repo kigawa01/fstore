@@ -6,7 +6,7 @@ import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
 import kotlinx.serialization.descriptors.SerialDescriptor
 import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
-import net.kigawa.fstore.domain.SerializableUuid
+import net.kigawa.fstore.domain.common.SerializableUuid
 
 class SerializableUuidSerializer : KSerializer<SerializableUuid> {
     override val descriptor: SerialDescriptor = PrimitiveSerialDescriptor("SerializableUuid", PrimitiveKind.STRING)

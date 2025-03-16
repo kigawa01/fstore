@@ -44,4 +44,5 @@ class App : Application() {
 
 fun main() {
     startApplication(::App, module.hot, BootstrapModule, FontAwesomeModule, CoreModule)
+
 }

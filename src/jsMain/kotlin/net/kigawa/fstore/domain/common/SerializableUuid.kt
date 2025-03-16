@@ -1,4 +1,4 @@
-package net.kigawa.fstore.domain
+package net.kigawa.fstore.domain.common
 
 import kotlinx.serialization.Serializable
 import net.kigawa.fstore.serializer.SerializableUuidSerializer
@@ -10,7 +10,7 @@ import kotlin.uuid.Uuid
 actual open class SerializableUuid actual constructor(
     strUuid: String,
 ) {
-    private val uuid = Uuid.parse(strUuid)
+    private val uuid = Uuid.Companion.parse(strUuid)
     actual val strUuid: String
         get() = uuid.toString()
 }
